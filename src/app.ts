@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import router from "./router";
+import routerAdmin from "./routerAdmin";
 
 /** 1-ENTRANCE **/
 const app = express();
@@ -15,6 +16,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 /** 2-ROUTERS **/
-app.use("/", router);
+app.use("/admin", routerAdmin);    // BSSR: ejs (admin)
+app.use("/", router);    //SPA: REACT(as REST api) -> for users 
 
 export default app;    // module.exports = app; 
