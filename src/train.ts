@@ -1,3 +1,23 @@
+// < ========== TASK H2 Start ========== >
+
+const getDigits = (str: string) => {
+  let digits: string = "";
+  
+  for (const char of str){
+    if (!isNaN(Number(char))){
+      digits += char;
+    }
+  }
+  return digits;
+}
+
+console.log(getDigits("sch00ln1"));
+
+// < ========== TASK H2 End ========== >
+
+
+
+
 // < ========== TASK H Start ========== >
 
 // function getPositive(arr: number[]): string {
