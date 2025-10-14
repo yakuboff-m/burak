@@ -1,13 +1,13 @@
 // < ========== TASK H Start ========== >
 
-function getPositive(arr: number[]): string {
-  return arr
-    .filter((num) => num > 0)
-    .map((num) => String(num))
-    .join("");
-}
+// function getPositive(arr: number[]): string {
+//   return arr
+//     .filter((num) => num > 0)
+//     .map((num) => String(num))
+//     .join("");
+// }
 
-console.log(getPositive([5, -7, 2]));
+// console.log(getPositive([5, -7, 2]));
 // < ========== TASK H end ========== >
 
 // < ========== TASK G start ========== >
