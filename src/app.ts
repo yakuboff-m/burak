@@ -11,6 +11,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(morgan(MORGAN_FORMAT));
+// app.use((req, res, next) => {
+//     console.log(`${req.method}, ${req.url} \n`);
+//     next();
+// });
 
 /** 2-SESSIONS **/
 
