@@ -7,3 +7,9 @@
         snake_case -> css
     - Error handling
 */
+
+/* API (Application programming interace)
+    Traditional API
+    Rest Api
+    GraphQL Api
+*/
