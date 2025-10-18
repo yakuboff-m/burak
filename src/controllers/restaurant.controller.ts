@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import {T} from "../libs/types/common";
 import MemberService from "../models/Member.service";
-import { MemberInput } from "../libs/types/member";
+import { LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
 
-const restaurantContraoller: T = {};
-restaurantContraoller.goHome = (req: Request, res: Response) => {
+const restaurantController: T = {};
+restaurantController.goHome = (req: Request, res: Response) => {
     try{
         console.log('goHome');
         // Logic
@@ -18,7 +18,7 @@ restaurantContraoller.goHome = (req: Request, res: Response) => {
     }
 }
 
-restaurantContraoller.getLogin = (req: Request, res: Response) => {
+restaurantController.getLogin = (req: Request, res: Response) => {
     try{
         console.log('getLogin');
         res.send("(GET)Admin-Login Page");
@@ -27,16 +27,22 @@ restaurantContraoller.getLogin = (req: Request, res: Response) => {
     }
 }
 
-restaurantContraoller.processLogin = (req: Request, res: Response) => {
+restaurantController.processLogin = async (req: Request, res: Response) => {
     try{
         console.log('processLogin');
-        res.send("(POST)Admin-Process-Login Page");
+        const input: LoginInput = req.body;
+
+        const memberService = new MemberService();
+        const result = await memberService.processLogin(input);
+
+        res.send(result);
     } catch (err){
         console.log("Error, processLogin:", err);
+        res.send(err);
     }
 }
 
-restaurantContraoller.getSignup = (req: Request, res: Response) => {
+restaurantController.getSignup = (req: Request, res: Response) => {
     try{
         console.log('getSignup');
         res.send("(GET)Admin-SignUp Page");
@@ -45,7 +51,7 @@ restaurantContraoller.getSignup = (req: Request, res: Response) => {
     }
 }
 
-restaurantContraoller.processSignup = async (req: Request, res: Response) => {
+restaurantController.processSignup = async (req: Request, res: Response) => {
     try{
         console.log('processSignup');
         console.log("body:",req.body);
@@ -63,4 +69,4 @@ restaurantContraoller.processSignup = async (req: Request, res: Response) => {
     }
 }
 
-export default restaurantContraoller;
+export default restaurantController;
