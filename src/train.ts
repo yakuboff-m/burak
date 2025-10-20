@@ -1,17 +1,50 @@
-// < ========== TASK H2 Start ========== >
+// < ========== TASK I Start ========== >
 
-const getDigits = (str: string) => {
-  let digits: string = "";
+function majorityElement(nums: number[]) {
+  interface N {
+    [key: number]: number;
+  }
   
-  for (const char of str){
-    if (!isNaN(Number(char))){
-      digits += char;
+  const countMap: N = {};
+
+  for (const num of nums) {
+    countMap[num] = (countMap[num] || 0) + 1;
+  }
+
+  let maxCount = 0;
+  let majority = nums[0];
+
+  for (const num in countMap) {
+    if (countMap[num] > maxCount) {
+      maxCount = countMap[num];
+      majority = Number(num);
     }
   }
-  return digits;
+
+  return majority;
 }
 
-console.log(getDigits("sch00ln1"));
+console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4])); 
+
+// < ========== TASK I End ========== >
+
+
+
+
+// < ========== TASK H2 Start ========== >
+
+// const getDigits = (str: string) => {
+//   let digits: string = "";
+  
+//   for (const char of str){
+//     if (!isNaN(Number(char))){
+//       digits += char;
+//     }
+//   }
+//   return digits;
+// }
+
+// console.log(getDigits("sch00ln1"));
 
 // < ========== TASK H2 End ========== >
 
