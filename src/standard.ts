@@ -13,3 +13,9 @@
     Rest Api
     GraphQL Api
 */
+
+
+/*
+    Traditional FD   => BSSR (Admin)      => EJS
+    Modern FD        => SPA (Users' app)  => REACT
+*/
