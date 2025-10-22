@@ -1,0 +1,1 @@
+console.log("FRONTEND MAIN JS STARTS"); 
