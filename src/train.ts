@@ -1,41 +1,56 @@
-// < ========== TASK I Start ========== >
+// < ========== TASK J Start ========== >
 
-function majorityElement(nums: number[]) {
-  interface N {
-    [key: number]: number;
-  }
-  
-  const countMap: N = {};
+const findLongestWord = (words: string) => {
+  const subWord = words.split(" ");
+  let longest = subWord[0];
 
-  for (const num of nums) {
-    countMap[num] = (countMap[num] || 0) + 1;
-  }
-
-  let maxCount = 0;
-  let majority = nums[0];
-
-  for (const num in countMap) {
-    if (countMap[num] > maxCount) {
-      maxCount = countMap[num];
-      majority = Number(num);
+  for (const item of subWord) {
+    if (item.length > longest.length) {
+      longest = item;
     }
   }
+  return longest;
+};
 
-  return majority;
-}
+console.log(findLongestWord("I love learning JavaScript"));
 
-console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4])); 
+// < ========== TASK J End ========== >
+
+// < ========== TASK I Start ========== >
+
+// function majorityElement(nums: number[]) {
+//   interface N {
+//     [key: number]: number;
+//   }
+
+//   const countMap: N = {};
+
+//   for (const num of nums) {
+//     countMap[num] = (countMap[num] || 0) + 1;
+//   }
+
+//   let maxCount = 0;
+//   let majority = nums[0];
+
+//   for (const num in countMap) {
+//     if (countMap[num] > maxCount) {
+//       maxCount = countMap[num];
+//       majority = Number(num);
+//     }
+//   }
+
+//   return majority;
+// }
+
+// console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
 
 // < ========== TASK I End ========== >
-
-
-
 
 // < ========== TASK H2 Start ========== >
 
 // const getDigits = (str: string) => {
 //   let digits: string = "";
-  
+
 //   for (const char of str){
 //     if (!isNaN(Number(char))){
 //       digits += char;
@@ -47,9 +62,6 @@ console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
 // console.log(getDigits("sch00ln1"));
 
 // < ========== TASK H2 End ========== >
-
-
-
 
 // < ========== TASK H Start ========== >
 
