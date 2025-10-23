@@ -30,7 +30,7 @@ app.use(
   session({
     secret: String(process.env.MONGO_URL),
     cookie: {
-      maxAge: 1000 * 60 * 60 * 3, // 3 hrs
+      maxAge: 1000 * 3600 * 6, // 6hrs
     },
     store: store,
     resave: true,
