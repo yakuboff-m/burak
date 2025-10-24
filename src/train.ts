@@ -1,18 +1,38 @@
-// < ========== TASK J Start ========== >
+// < ========== TASK K Start ========== >
 
-const findLongestWord = (words: string) => {
-  const subWord = words.split(" ");
-  let longest = subWord[0];
+function countVowels(str: string): number {
+  const vowels = "aeiouAEIOU";
+  let count = 0;
 
-  for (const item of subWord) {
-    if (item.length > longest.length) {
-      longest = item;
+  for(const char of str) {
+    if(vowels.includes(char)) {
+      count++;
     }
   }
-  return longest;
-};
 
-console.log(findLongestWord("I love learning JavaScript"));
+  return count;
+}
+
+console.log(countVowels("stIring"));
+// < ========== TASK K End ========== >
+
+
+
+// < ========== TASK J Start ========== >
+
+// const findLongestWord = (words: string) => {
+//   const subWord = words.split(" ");
+//   let longest = subWord[0];
+
+//   for (const item of subWord) {
+//     if (item.length > longest.length) {
+//       longest = item;
+//     }
+//   }
+//   return longest;
+// };
+
+// console.log(findLongestWord("I love learning JavaScript"));
 
 // < ========== TASK J End ========== >
 
