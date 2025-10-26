@@ -1,19 +1,38 @@
-// < ========== TASK K Start ========== >
+// < ========== TASK L Start ========== >
 
-function countVowels(str: string): number {
-  const vowels = "aeiouAEIOU";
-  let count = 0;
-
-  for(const char of str) {
-    if(vowels.includes(char)) {
-      count++;
-    }
+function getReverse(a: string) {
+  if(typeof a !== "string") {
+    console.log("Please, insert a string")
+  } else {
+    const sorted = a.split(" ").map(word => word.split("").reverse().join(""));
+    const result = sorted.join(" ");
+    console.log(result);
   }
-
-  return count;
 }
 
-console.log(countVowels("stIring"));
+getReverse("string number array");
+
+// < ========== TASK L End ========== >
+
+
+
+
+// < ========== TASK K Start ========== >
+
+// function countVowels(str: string): number {
+//   const vowels = "aeiouAEIOU";
+//   let count = 0;
+
+//   for(const char of str) {
+//     if(vowels.includes(char)) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(countVowels("stIring"));
 // < ========== TASK K End ========== >
 
 
