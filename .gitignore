@@ -4,3 +4,5 @@ dist
 .env
 note.txt
 uploads
+
+.DS_Store
