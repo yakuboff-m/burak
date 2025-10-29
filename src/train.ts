@@ -1,3 +1,19 @@
+// < ========== TASK M start ========== >
+
+function getSquareNumbers(numbers: number[]): { number: number; square: number }[] {
+  return numbers.map(num => ({
+    number: num,
+    square: num * num
+  }));
+}
+
+console.log(getSquareNumbers([1, 2, 3]));
+
+// < ========== TASK M End ========== >
+
+
+
+
 // < ========== TASK L Start ========== >
 
 function getReverse(a: string) {
