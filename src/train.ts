@@ -1,3 +1,17 @@
+// < ========== TASK N start ========== >
+
+const palindromCheck = (a: string) => {
+  const reversedA = a.split("").reverse().join("");
+  return reversedA === a;
+}
+
+console.log(palindromCheck("dad"));
+// < ========== TASK N start ========== >
+
+
+
+
+
 // < ========== TASK M start ========== >
 
 function getSquareNumbers(numbers: number[]): { number: number; square: number }[] {
@@ -7,7 +21,7 @@ function getSquareNumbers(numbers: number[]): { number: number; square: number }
   }));
 }
 
-console.log(getSquareNumbers([1, 2, 3]));
+// console.log(getSquareNumbers([1, 2, 3]));
 
 // < ========== TASK M End ========== >
 
@@ -26,7 +40,7 @@ function getReverse(a: string) {
   }
 }
 
-getReverse("string number array");
+// getReverse("string number array");
 
 // < ========== TASK L End ========== >
 
