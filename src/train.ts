@@ -1,5 +1,19 @@
 // < ========== TASK P start ========== >
 
+function hasProperty(obj: object, str: string){
+  const keys = Object.keys(obj);
+  return keys.includes(str);
+}
+
+console.log(hasProperty({name: "BMW", model: "M3"}, "key"));
+
+// < ========== TASK P end ========== >
+
+
+
+
+// < ========== TASK P start ========== >
+
 function objectToArray<T extends object>(obj: T): [keyof T, T[keyof T]][] {
   const result: [keyof T, T[keyof T]][] = [];
 
@@ -12,7 +26,7 @@ function objectToArray<T extends object>(obj: T): [keyof T, T[keyof T]][] {
   return result;
 }
 
-console.log(objectToArray({ a: 10, b: 20 }));
+// console.log(objectToArray({ a: 10, b: 20 }));
 
 // < ========== TASK P end ========== >
 
