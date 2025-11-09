@@ -1,11 +1,27 @@
 // < ========== TASK P start ========== >
 
+function calculate(numStr: string) {
+  const [a, b] = numStr.split('+').map(ele => Number(ele));
+  return a + b;
+}
+
+console.log(calculate("4+7"));
+
+// < ========== TASK P end ========== >
+
+
+
+
+
+
+// < ========== TASK P start ========== >
+
 function hasProperty(obj: object, str: string){
   const keys = Object.keys(obj);
   return keys.includes(str);
 }
 
-console.log(hasProperty({name: "BMW", model: "M3"}, "key"));
+// console.log(hasProperty({name: "BMW", model: "M3"}, "key"));
 
 // < ========== TASK P end ========== >
 
