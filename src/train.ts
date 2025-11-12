@@ -1,11 +1,28 @@
 // < ========== TASK P start ========== >
 
+function missingNumber(nums: number[]): number {
+  const n = nums.length;
+  const expectedSum = (n * (n + 1)) / 2;
+  const actualSum = nums.reduce((sum, num) => sum + num, 0);
+  return expectedSum - actualSum;
+}
+
+console.log(missingNumber([3, 2, 0, 1, 5, 4, 7])); 
+
+// < ========== TASK P end ========== >
+
+
+
+
+
+// < ========== TASK P start ========== >
+
 function calculate(numStr: string) {
   const [a, b] = numStr.split('+').map(ele => Number(ele));
   return a + b;
 }
 
-console.log(calculate("4+7"));
+// console.log(calculate("4+7"));
 
 // < ========== TASK P end ========== >
 
