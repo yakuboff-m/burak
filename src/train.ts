@@ -1,4 +1,27 @@
-// < ========== TASK P start ========== >
+// < ========== TASK T start ========== >
+
+function mergeSortedArrays(a: number[], b: number[]): number[]{
+  const combinedArr = [...a, ...b];
+  const sortedArr = combinedArr.sort((x, y) => {return x - y});
+  return sortedArr;
+}
+
+console.log(mergeSortedArrays([9, 12, 34], [ 3, 6, 7]));
+
+//better vs:
+function mergeSortedArrayssssss(a: number[], b: number[]): number[] {
+  return [...a, ...b].sort((x, y) => x - y);
+}
+
+// console.log(mergeSortedArrayssssss([3, 2, 0, 1, 45], [ 5, 4, 37, 25])); 
+console.log(mergeSortedArrayssssss([9, 12, 34], [ 3, 6, 7]));
+
+// < ========== TASK T end ========== >
+
+
+
+
+// < ========== TASK S start ========== >
 
 function missingNumber(nums: number[]): number {
   const n = nums.length;
@@ -7,9 +30,9 @@ function missingNumber(nums: number[]): number {
   return expectedSum - actualSum;
 }
 
-console.log(missingNumber([3, 2, 0, 1, 5, 4, 7])); 
+// console.log(missingNumber([3, 2, 0, 1, 5, 4, 7])); 
 
-// < ========== TASK P end ========== >
+// < ========== TASK S end ========== >
 
 
 
@@ -133,18 +156,18 @@ function getReverse(a: string) {
 
 // < ========== TASK K Start ========== >
 
-// function countVowels(str: string): number {
-//   const vowels = "aeiouAEIOU";
-//   let count = 0;
+function countVowels(str: string): number {
+  const vowels = "aeiouAEIOU";
+  let count = 0;
 
-//   for(const char of str) {
-//     if(vowels.includes(char)) {
-//       count++;
-//     }
-//   }
+  for(const char of str) {
+    if(vowels.includes(char)) {
+      count++;
+    }
+  }
 
-//   return count;
-// }
+  return count;
+}
 
 // console.log(countVowels("stIring"));
 // < ========== TASK K End ========== >
@@ -153,17 +176,17 @@ function getReverse(a: string) {
 
 // < ========== TASK J Start ========== >
 
-// const findLongestWord = (words: string) => {
-//   const subWord = words.split(" ");
-//   let longest = subWord[0];
+const findLongestWord = (words: string) => {
+  const subWord = words.split(" ");
+  let longest = subWord[0];
 
-//   for (const item of subWord) {
-//     if (item.length > longest.length) {
-//       longest = item;
-//     }
-//   }
-//   return longest;
-// };
+  for (const item of subWord) {
+    if (item.length > longest.length) {
+      longest = item;
+    }
+  }
+  return longest;
+};
 
 // console.log(findLongestWord("I love learning JavaScript"));
 
@@ -171,29 +194,29 @@ function getReverse(a: string) {
 
 // < ========== TASK I Start ========== >
 
-// function majorityElement(nums: number[]) {
-//   interface N {
-//     [key: number]: number;
-//   }
+function majorityElement(nums: number[]) {
+  interface N {
+    [key: number]: number;
+  }
 
-//   const countMap: N = {};
+  const countMap: N = {};
 
-//   for (const num of nums) {
-//     countMap[num] = (countMap[num] || 0) + 1;
-//   }
+  for (const num of nums) {
+    countMap[num] = (countMap[num] || 0) + 1;
+  }
 
-//   let maxCount = 0;
-//   let majority = nums[0];
+  let maxCount = 0;
+  let majority = nums[0];
 
-//   for (const num in countMap) {
-//     if (countMap[num] > maxCount) {
-//       maxCount = countMap[num];
-//       majority = Number(num);
-//     }
-//   }
+  for (const num in countMap) {
+    if (countMap[num] > maxCount) {
+      maxCount = countMap[num];
+      majority = Number(num);
+    }
+  }
 
-//   return majority;
-// }
+  return majority;
+}
 
 // console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
 
