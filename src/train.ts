@@ -1,3 +1,24 @@
+// < ========== TASK U start ========== >
+
+function sumOdds(num: number): number {
+  let sum = 0;
+  for(let i = 0; i < num; i++) {
+    let z = i % 2
+    if(z === 1) {
+      sum ++;
+    }
+  }
+  return sum;
+}
+
+console.log(sumOdds(9)); 
+
+// < ========== TASK U end ========== >
+
+
+
+
+
 // < ========== TASK T start ========== >
 
 function mergeSortedArrays(a: number[], b: number[]): number[]{
@@ -6,7 +27,7 @@ function mergeSortedArrays(a: number[], b: number[]): number[]{
   return sortedArr;
 }
 
-console.log(mergeSortedArrays([9, 12, 34], [ 3, 6, 7]));
+// console.log(mergeSortedArrays([9, 12, 34], [ 3, 6, 7]));
 
 //better vs:
 function mergeSortedArrayssssss(a: number[], b: number[]): number[] {
@@ -14,7 +35,7 @@ function mergeSortedArrayssssss(a: number[], b: number[]): number[] {
 }
 
 // console.log(mergeSortedArrayssssss([3, 2, 0, 1, 45], [ 5, 4, 37, 25])); 
-console.log(mergeSortedArrayssssss([9, 12, 34], [ 3, 6, 7]));
+// console.log(mergeSortedArrayssssss([9, 12, 34], [ 3, 6, 7]));
 
 // < ========== TASK T end ========== >
 
@@ -224,16 +245,16 @@ function majorityElement(nums: number[]) {
 
 // < ========== TASK H2 Start ========== >
 
-// const getDigits = (str: string) => {
-//   let digits: string = "";
+const getDigits = (str: string) => {
+  let digits: string = "";
 
-//   for (const char of str){
-//     if (!isNaN(Number(char))){
-//       digits += char;
-//     }
-//   }
-//   return digits;
-// }
+  for (const char of str){
+    if (!isNaN(Number(char))){
+      digits += char;
+    }
+  }
+  return digits;
+}
 
 // console.log(getDigits("sch00ln1"));
 
@@ -241,23 +262,23 @@ function majorityElement(nums: number[]) {
 
 // < ========== TASK H Start ========== >
 
-// function getPositive(arr: number[]): string {
-//   return arr
-//     .filter((num) => num > 0)
-//     .map((num) => String(num))
-//     .join("");
-// }
+function getPositive(arr: number[]): string {
+  return arr
+    .filter((num) => num > 0)
+    .map((num) => String(num))
+    .join("");
+}
 
 // console.log(getPositive([5, -7, 2]));
 // < ========== TASK H end ========== >
 
 // < ========== TASK G start ========== >
 
-// function getHighestIndex(arr: number[]) {
-//   const maxValue = Math.max(...arr);
-//   const index = arr.indexOf(maxValue);
-//   return index;
-// }
+function getHighestIndex(arr: number[]) {
+  const maxValue = Math.max(...arr);
+  const index = arr.indexOf(maxValue);
+  return index;
+}
 
 // console.log(getHighestIndex([4, 65, 23, 43, 765]));
 
