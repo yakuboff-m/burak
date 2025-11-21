@@ -1,3 +1,43 @@
+// < ========== TASK V start ========== >
+function countChars(str: string): Record<string, number> {
+  const result: Record<string, number> = {};
+
+  for (const char of str) {
+    if (result[char]) {
+      result[char] += 1;
+    } else {
+      result[char] = 1;
+    }
+  }
+
+  return result;
+}
+
+console.log(countChars("hello")); 
+
+
+// better vs
+function countCharss(str: string){
+  let obj = new Map<string, number>();
+  for (const char of str) {
+        if (obj.has(char)) {
+            obj.set(char, obj.get(char)! + 1);
+        } else {
+            obj.set(char, 1);
+        }
+    }
+    return obj;
+}
+
+console.log(countCharss("hello")); 
+
+// < ========== TASK V end ========== >
+
+
+
+
+
+
 // < ========== TASK U start ========== >
 
 function sumOdds(num: number): number {
@@ -11,7 +51,7 @@ function sumOdds(num: number): number {
   return sum;
 }
 
-console.log(sumOdds(9)); 
+// console.log(sumOdds(9)); 
 
 // < ========== TASK U end ========== >
 
@@ -283,3 +323,4 @@ function getHighestIndex(arr: number[]) {
 // console.log(getHighestIndex([4, 65, 23, 43, 765]));
 
 // < ========== TASK G end ========== >
+
