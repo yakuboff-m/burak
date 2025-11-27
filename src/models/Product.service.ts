@@ -11,6 +11,7 @@ import ProductModel from "../schema/Product.model";
 import { T } from "../libs/types/common";
 import productController from "../controllers/product.controller";
 import { ProductCollection } from "../libs/enums/product.enum";
+import { ObjectId } from "mongoose";
 
 class ProductService {
   private readonly productModel;
@@ -25,8 +26,17 @@ class ProductService {
     const match: T = { productStatus: ProductStatus.PROCESS };
     if (inquiry.productCollection)
       match.productCollection = inquiry.productCollection;
-    if (inquiry.search)
-      match.productName = { $regex: new RegExp(inquiry.search, "i") };
+    // if (inquiry.search)
+    //   match.productName = { $regex: new RegExp(inquiry.search, "i") };
+    if (inquiry.search) {
+      const searchNum = Number(inquiry.search);
+      if (!isNaN(searchNum)) {
+        match.productPrice = searchNum;
+      } else {
+        match.productName = { $regex: new RegExp(inquiry.search, "i") };
+      }
+    }
+
     const sort: T =
       inquiry.order === "productPrice"
         ? { [inquiry.order]: 1 }
@@ -41,6 +51,25 @@ class ProductService {
       ])
       .exec();
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+    return result;
+  }
+
+  public async getProduct(
+    memberId: ObjectId | null,
+    id: string
+  ): Promise<Product> {
+    const productId = shapeIntoMongooseObjectId(id);
+
+    let result = this.productModel.findOne({
+      _id: productId,
+      productStatus: ProductStatus.PROCESS,
+    }).exec();
+
+    if(!result)
+      throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+
+    // TODO: If authenticated users => first time => view log creation
 
     return result;
   }
