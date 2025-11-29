@@ -11,7 +11,6 @@ import {
 import Errors, { HttpCode, Message } from "../libs/Error";
 import AuthService from "../models/Auth.service";
 import { AUTH_TIMER } from "../libs/config";
-import { verify } from "../../node_modules/@types/jsonwebtoken/index.d";
 
 // REACT
 const memberService = new MemberService();
