@@ -11,15 +11,18 @@ import { shapeIntoMongooseObjectId } from "../libs/config";
 import Errors, { HttpCode, Message } from "../libs/Error";
 import { ObjectId } from "mongoose";
 import { OrderStatus } from "../libs/enums/order.enum";
-import MemberService from './Member.service';
+import MemberService from "./Member.service";
+import ProductModel from "../schema/Product.model";
 
 class OrderService {
   private readonly orderModel;
   private readonly orderItemModel;
   private readonly memberService;
+  private readonly productModel;
 
   constructor() {
     this.orderModel = OrderModel;
+    this.productModel = ProductModel;
     this.orderItemModel = OrderItemModel;
     this.memberService = new MemberService();
   }
@@ -35,6 +38,40 @@ class OrderService {
     const delivery = amount < 100 ? 5 : 0;
 
     try {
+      // -------------
+      // loop ->
+      // -------------
+      for (const item of input) {
+        const product = await this.productModel.findById(item.productId);
+
+        console.log(`Product: ${product.productName}`);
+        console.log(`Stock BEFORE: ${product.productLeftCount}`);
+        console.log(`Ordering: ${item.itemQuantity}`);
+
+        if (!product) {
+          throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+        }
+
+        // ------------------------
+        // if no stock throw err ->
+        // ------------------------
+        if (product.productLeftCount < item.itemQuantity) {
+          throw new Errors(HttpCode.BAD_REQUEST, Message.NO_STOCK);
+        }
+
+        // ---------------
+        // Decrement stock
+        // ---------------
+        const updatedProduct = await this.productModel.findByIdAndUpdate(
+          item.productId,
+          { $inc: { productLeftCount: -item.itemQuantity } },
+          { new: true }
+        );
+
+        console.log(`Stock AFTER: ${updatedProduct.productLeftCount}`);
+        console.log("=========================");
+      }
+
       const newOrder: Order = await this.orderModel.create({
         orderTotal: amount + delivery,
         orderDelivery: delivery,
@@ -43,14 +80,17 @@ class OrderService {
 
       const orderId = newOrder._id;
       console.log("orderId:", orderId);
+
       await this.recordOrderItem(orderId, input);
+
       return newOrder;
     } catch (err) {
       console.log("ERROR, model: createOrder", err);
-      throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
+      throw err instanceof Errors
+        ? err
+        : new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
     }
   }
-
   private async recordOrderItem(
     orderId: ObjectId,
     input: OrderItemInput[]
@@ -110,16 +150,17 @@ class OrderService {
     const orderId = shapeIntoMongooseObjectId(input.orderId);
     const orderStatus = input.orderStatus;
 
-    const result = await this.orderModel.findOneAndUpdate(
-      { memberId: memberId, _id: orderId },
-      { orderStatus: orderStatus },
-      { new: true }
-    ).exec();
-    if (!result) 
-        throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+    const result = await this.orderModel
+      .findOneAndUpdate(
+        { memberId: memberId, _id: orderId },
+        { orderStatus: orderStatus },
+        { new: true }
+      )
+      .exec();
+    if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
-    if(orderStatus === OrderStatus.PROCESS) {
-        await this.memberService.addUserPoint(member, 1);
+    if (orderStatus === OrderStatus.PROCESS) {
+      await this.memberService.addUserPoint(member, 1);
     }
 
     return result;
