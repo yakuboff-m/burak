@@ -1,4 +1,24 @@
-// < ========== TASK W start ========== >
+// < ========== TASK Z start ========== >
+
+function sumEvens(arr: number[]): number {
+  let sum = 0;
+  arr.forEach(ele => {
+    if(ele % 2 === 0) sum += ele;
+  })
+  return sum;
+}
+
+
+console.log(sumEvens([1,2,3,4,8,0]));
+
+
+// < ========== TASK Z end ========== >
+
+
+
+
+
+// < ========== TASK Y start ========== >
 
 function findIntersection(arr1: number[], arr2: number[]): number[] {
   const result: number[] = [];
@@ -13,10 +33,10 @@ function findIntersection(arr1: number[], arr2: number[]): number[] {
 }
 
 
-console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+// console.log(findIntersection([1, 2, 3], [3, 2, 0]));
 
 
-// < ========== TASK W end ========== >
+// < ========== TASK Y end ========== >
 
 
 
