@@ -1,22 +1,42 @@
+// < ========== TASK ZA start ========== >
+
+function sortByAge(arr: { age: number }[]): { age: number }[] {
+  arr.sort((a, b) => a.age - b.age);
+  return arr;
+}
+
+console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
+
+// for more complex task requirement => v:
+function sortBetter(
+  arr: Array<Record<string, any>>
+): Array<Record<string, any>> {
+  return arr.sort((a, b) => {
+    const ageA = a.age ?? Infinity;
+    const ageB = b.age ?? Infinity;
+    return ageA - ageB;
+  });
+}
+
+console.log(
+  sortBetter([{ age: 23 }, { name: "joseph" }, { nation: "uzbek" }, { age: 21 }, { age: 13 }])
+);
+
+// < ========== TASK ZA end ========== >
+
 // < ========== TASK Z start ========== >
 
 function sumEvens(arr: number[]): number {
   let sum = 0;
-  arr.forEach(ele => {
-    if(ele % 2 === 0) sum += ele;
-  })
+  arr.forEach((ele) => {
+    if (ele % 2 === 0) sum += ele;
+  });
   return sum;
 }
 
-
-console.log(sumEvens([1,2,3,4,8,0]));
-
+// console.log(sumEvens([1,2,3,4,8,0]));
 
 // < ========== TASK Z end ========== >
-
-
-
-
 
 // < ========== TASK Y start ========== >
 
@@ -32,13 +52,9 @@ function findIntersection(arr1: number[], arr2: number[]): number[] {
   return result;
 }
 
-
 // console.log(findIntersection([1, 2, 3], [3, 2, 0]));
 
-
 // < ========== TASK Y end ========== >
-
-
 
 // < ========== TASK X start ========== >
 
