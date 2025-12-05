@@ -1,3 +1,17 @@
+// < ========== TASK ZC start ========== >
+
+function celsiusToFahrenheit(num: number): number{
+  return (num * 9/5) + 32
+}
+
+console.log(celsiusToFahrenheit(0));
+
+
+// < ========== TASK ZC end ========== >
+
+
+
+
 // < ========== TASK ZA start ========== >
 
 function sortByAge(arr: { age: number }[]): { age: number }[] {
@@ -5,7 +19,7 @@ function sortByAge(arr: { age: number }[]): { age: number }[] {
   return arr;
 }
 
-console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
+// console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
 
 // for more complex task requirement => v:
 function sortBetter(
@@ -18,9 +32,9 @@ function sortBetter(
   });
 }
 
-console.log(
-  sortBetter([{ age: 23 }, { name: "joseph" }, { nation: "uzbek" }, { age: 21 }, { age: 13 }])
-);
+// console.log(
+//   sortBetter([{ age: 23 }, { name: "joseph" }, { nation: "uzbek" }, { age: 21 }, { age: 13 }])
+// );
 
 // < ========== TASK ZA end ========== >
 
