@@ -1,10 +1,28 @@
+// < ========== TASK ZD start ========== >
+
+function changeNumberInArray(target: number, arr: number[], newValue: number): number[] {
+  const index = arr.indexOf(target);
+  if (index === -1) return arr;
+  const newArr = [...arr];
+  newArr[index] = newValue;
+  return newArr;
+}
+
+console.log(changeNumberInArray(1, [1,3,7,2], 8));
+
+
+
+// < ========== TASK ZD end ========== >
+
+
+
 // < ========== TASK ZC start ========== >
 
 function celsiusToFahrenheit(num: number): number{
   return (num * 9/5) + 32
 }
 
-console.log(celsiusToFahrenheit(0));
+// console.log(celsiusToFahrenheit(0));
 
 
 // < ========== TASK ZC end ========== >
