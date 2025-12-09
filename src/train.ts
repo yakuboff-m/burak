@@ -1,3 +1,24 @@
+// < ========== TASK ZE start ========== >
+
+function removeDuplicate(str : string): string {
+  let result = "";
+  for (let char of str){
+    if(!result.includes(char)) {
+      result += char;
+    }
+  }
+  return result;
+}
+
+console.log(removeDuplicate("boolean"));
+
+
+
+// < ========== TASK ZE end ========== >
+
+
+
+
 // < ========== TASK ZD start ========== >
 
 function changeNumberInArray(target: number, arr: number[], newValue: number): number[] {
@@ -8,7 +29,7 @@ function changeNumberInArray(target: number, arr: number[], newValue: number): n
   return newArr;
 }
 
-console.log(changeNumberInArray(1, [1,3,7,2], 8));
+// console.log(changeNumberInArray(1, [1,3,7,2], 8));
 
 
 
