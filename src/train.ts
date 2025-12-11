@@ -1,5 +1,27 @@
 // < ========== TASK ZE start ========== >
 
+function capitalizeWords(str: string): string {
+  return str
+    .split(" ")
+    .map(word => {
+      if (word.length <= 2) return word;
+
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+
+console.log(capitalizeWords("name should be a string"));
+
+
+
+// < ========== TASK ZE end ========== >
+
+
+
+
+// < ========== TASK ZE start ========== >
+
 function removeDuplicate(str : string): string {
   let result = "";
   for (let char of str){
@@ -10,7 +32,7 @@ function removeDuplicate(str : string): string {
   return result;
 }
 
-console.log(removeDuplicate("boolean"));
+// console.log(removeDuplicate("boolean"));
 
 
 
