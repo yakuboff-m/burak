@@ -1,3 +1,17 @@
+// < ========== TASK ZG start ========== >
+
+function turnSnakeCase(str: string): string {
+  return str.toLowerCase().split(" ").join("_");
+}
+
+console.log(turnSnakeCase("Name should be A string"));
+
+
+
+// < ========== TASK ZG end ========== >
+
+
+
 // < ========== TASK ZE start ========== >
 
 function capitalizeWords(str: string): string {
@@ -11,7 +25,7 @@ function capitalizeWords(str: string): string {
     .join(" ");
 }
 
-console.log(capitalizeWords("name should be a string"));
+// console.log(capitalizeWords("name should be a string"));
 
 
 
