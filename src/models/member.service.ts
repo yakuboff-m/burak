@@ -1,4 +1,4 @@
-import { MemberStatus, MemberType } from "./../libs/enums/member.enum";
+import { MemberStatus, MemberType } from "../libs/enums/member.enum";
 import MemberModel from "../schema/Member.model";
 import {
   LoginInput,

@@ -1,10 +1,41 @@
+// < ========== TASK ZH start ========== >
+
+function findDisappearedNumbers(arr: number[]): number[] {
+  const max = Math.max(...arr);
+  const present: boolean[] = new Array(max + 1).fill(false);
+  const result: number[] = [];
+
+  for (const num of arr) {
+    present[num] = true;
+  }
+
+  for (let i = 1; i <= max; i++) {
+    if (!present[i]) {
+      result.push(i);
+    }
+  }
+
+  return result;
+}
+
+
+console.log(findDisappearedNumbers([1, 3, 4, 7]));
+
+
+
+// < ========== TASK ZH end ========== >
+
+
+
+
+
 // < ========== TASK ZG start ========== >
 
 function turnSnakeCase(str: string): string {
   return str.toLowerCase().split(" ").join("_");
 }
 
-console.log(turnSnakeCase("Name should be A string"));
+// console.log(turnSnakeCase("Name should be A string"));
 
 
 
