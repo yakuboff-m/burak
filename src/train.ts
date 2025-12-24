@@ -1,3 +1,22 @@
+// < ========== TASK ZG start ========== >
+
+
+const HelloWorld = (str: string): Promise<string> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(str);
+    }, 3000);
+  });
+};
+
+const delay = async () => {
+  const result = await HelloWorld("Hello World");
+  console.log(result);
+};
+
+delay();
+
+
 // < ========== TASK ZH start ========== >
 
 function findDisappearedNumbers(arr: number[]): number[] {
@@ -19,7 +38,7 @@ function findDisappearedNumbers(arr: number[]): number[] {
 }
 
 
-console.log(findDisappearedNumbers([1, 3, 4, 7]));
+// console.log(findDisappearedNumbers([1, 3, 4, 7]));
 
 
 
