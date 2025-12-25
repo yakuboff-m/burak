@@ -1,4 +1,27 @@
-// < ========== TASK ZG start ========== >
+// < ========== TASK ZJ start ========== >
+type NestedArray = (number | NestedArray)[];
+
+const reduceNestedArray = (arr: NestedArray): number => {
+  let sum = 0;
+
+  for(const ele of arr){
+    if(typeof ele === "number") {
+      sum += ele;
+    } else if(Array.isArray(ele)){
+      sum += reduceNestedArray(ele);
+    }
+  }
+
+  return sum;
+}
+
+console.log(reduceNestedArray([1, [1, 2, [4, 1, 2, [4]]]]));
+
+// < ========== TASK ZJ start ========== >
+
+
+
+// < ========== TASK ZI start ========== >
 
 
 const HelloWorld = (str: string): Promise<string> => {
