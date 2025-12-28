@@ -1,3 +1,27 @@
+// < ========== TASK ZK start ========== >
+
+function printNumbers(): void {
+  let i = 1;
+
+  const log = setInterval(() => {
+    console.log(i);
+    i++;
+
+    if (i > 5) {
+      clearInterval(log);
+    }
+  }, 1000);
+}
+
+printNumbers();
+
+
+// < ========== TASK ZK start ========== >
+
+
+
+
+
 // < ========== TASK ZJ start ========== >
 type NestedArray = (number | NestedArray)[];
 
@@ -15,7 +39,7 @@ const reduceNestedArray = (arr: NestedArray): number => {
   return sum;
 }
 
-console.log(reduceNestedArray([1, [1, 2, [4, 1, 2, [4]]]]));
+// console.log(reduceNestedArray([1, [1, 2, [4, 1, 2, [4]]]]));
 
 // < ========== TASK ZJ start ========== >
 
