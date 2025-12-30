@@ -1,3 +1,15 @@
+// < ========== TASK ZL start ========== >
+
+function stringToKebab(str: string): string {
+  return str.toLowerCase().split(" ").join("-");
+}
+
+console.log(stringToKebab("Name should be A string"));
+
+// < ========== TASK ZL end ========== >
+
+
+
 // < ========== TASK ZK start ========== >
 
 function printNumbers(): void {
@@ -13,7 +25,7 @@ function printNumbers(): void {
   }, 1000);
 }
 
-printNumbers();
+// printNumbers();s
 
 
 // < ========== TASK ZK start ========== >
@@ -61,7 +73,7 @@ const delay = async () => {
   console.log(result);
 };
 
-delay();
+// delay();
 
 
 // < ========== TASK ZH start ========== >
@@ -102,8 +114,6 @@ function turnSnakeCase(str: string): string {
 }
 
 // console.log(turnSnakeCase("Name should be A string"));
-
-
 
 // < ========== TASK ZG end ========== >
 
