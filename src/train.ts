@@ -1,14 +1,29 @@
+// < ========== TASK ZM start ========== >
+
+function squareDigits(digits: number): string {
+  const square = digits
+    .toString()
+    .split("")
+    .map((ele) => String(Number(ele) * Number(ele)))
+    .join("");
+  return square;
+}
+
+console.log(squareDigits(9119));
+
+// < ========== TASK ZM end ========== >
+
+
+
 // < ========== TASK ZL start ========== >
 
 function stringToKebab(str: string): string {
   return str.toLowerCase().split(" ").join("-");
 }
 
-console.log(stringToKebab("Name should be A string"));
+// console.log(stringToKebab("Name should be A string"));
 
 // < ========== TASK ZL end ========== >
-
-
 
 // < ========== TASK ZK start ========== >
 
@@ -27,12 +42,7 @@ function printNumbers(): void {
 
 // printNumbers();s
 
-
 // < ========== TASK ZK start ========== >
-
-
-
-
 
 // < ========== TASK ZJ start ========== >
 type NestedArray = (number | NestedArray)[];
@@ -40,25 +50,22 @@ type NestedArray = (number | NestedArray)[];
 const reduceNestedArray = (arr: NestedArray): number => {
   let sum = 0;
 
-  for(const ele of arr){
-    if(typeof ele === "number") {
+  for (const ele of arr) {
+    if (typeof ele === "number") {
       sum += ele;
-    } else if(Array.isArray(ele)){
+    } else if (Array.isArray(ele)) {
       sum += reduceNestedArray(ele);
     }
   }
 
   return sum;
-}
+};
 
 // console.log(reduceNestedArray([1, [1, 2, [4, 1, 2, [4]]]]));
 
 // < ========== TASK ZJ start ========== >
 
-
-
 // < ========== TASK ZI start ========== >
-
 
 const HelloWorld = (str: string): Promise<string> => {
   return new Promise((resolve) => {
@@ -74,7 +81,6 @@ const delay = async () => {
 };
 
 // delay();
-
 
 // < ========== TASK ZH start ========== >
 
@@ -96,16 +102,9 @@ function findDisappearedNumbers(arr: number[]): number[] {
   return result;
 }
 
-
 // console.log(findDisappearedNumbers([1, 3, 4, 7]));
 
-
-
 // < ========== TASK ZH end ========== >
-
-
-
-
 
 // < ========== TASK ZG start ========== >
 
@@ -117,14 +116,12 @@ function turnSnakeCase(str: string): string {
 
 // < ========== TASK ZG end ========== >
 
-
-
 // < ========== TASK ZE start ========== >
 
 function capitalizeWords(str: string): string {
   return str
     .split(" ")
-    .map(word => {
+    .map((word) => {
       if (word.length <= 2) return word;
 
       return word.charAt(0).toUpperCase() + word.slice(1);
@@ -134,19 +131,14 @@ function capitalizeWords(str: string): string {
 
 // console.log(capitalizeWords("name should be a string"));
 
-
-
 // < ========== TASK ZE end ========== >
-
-
-
 
 // < ========== TASK ZE start ========== >
 
-function removeDuplicate(str : string): string {
+function removeDuplicate(str: string): string {
   let result = "";
-  for (let char of str){
-    if(!result.includes(char)) {
+  for (let char of str) {
+    if (!result.includes(char)) {
       result += char;
     }
   }
@@ -155,16 +147,15 @@ function removeDuplicate(str : string): string {
 
 // console.log(removeDuplicate("boolean"));
 
-
-
 // < ========== TASK ZE end ========== >
-
-
-
 
 // < ========== TASK ZD start ========== >
 
-function changeNumberInArray(target: number, arr: number[], newValue: number): number[] {
+function changeNumberInArray(
+  target: number,
+  arr: number[],
+  newValue: number
+): number[] {
   const index = arr.indexOf(target);
   if (index === -1) return arr;
   const newArr = [...arr];
@@ -174,25 +165,17 @@ function changeNumberInArray(target: number, arr: number[], newValue: number): n
 
 // console.log(changeNumberInArray(1, [1,3,7,2], 8));
 
-
-
 // < ========== TASK ZD end ========== >
-
-
 
 // < ========== TASK ZC start ========== >
 
-function celsiusToFahrenheit(num: number): number{
-  return (num * 9/5) + 32
+function celsiusToFahrenheit(num: number): number {
+  return (num * 9) / 5 + 32;
 }
 
 // console.log(celsiusToFahrenheit(0));
 
-
 // < ========== TASK ZC end ========== >
-
-
-
 
 // < ========== TASK ZA start ========== >
 
