@@ -1,3 +1,16 @@
+// < ========== TASK ZN start ========== >
+
+function rotateArray(arr: number[], num: number): number[] {
+  const  k = arr.length - (num + 1),
+    sliced = arr.slice(arr.length - k),
+    remaining = arr.slice(0, arr.length - k);
+  return [...sliced, ...remaining];
+}
+
+console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+
+// < ========== TASK ZN end ========== >
+
 // < ========== TASK ZM start ========== >
 
 function squareDigits(digits: number): string {
@@ -9,11 +22,9 @@ function squareDigits(digits: number): string {
   return square;
 }
 
-console.log(squareDigits(9119));
+// console.log(squareDigits(9119));
 
 // < ========== TASK ZM end ========== >
-
-
 
 // < ========== TASK ZL start ========== >
 
