@@ -1,3 +1,27 @@
+// < ========== TASK ZO start ========== >
+
+
+function areParenthesesBalanced(str: string): boolean {
+  let count = 0;
+
+  for (const char of str) {
+    if (char === "(") count++;
+    else if (char === ")") count--;
+
+    if (count < 0) return false;
+  }
+
+  return count === 0;
+}
+
+console.log(
+  areParenthesesBalanced("string()ichida(qavslar)soni()balansda")
+); 
+
+
+// < ========== TASK Z0 end ========== >
+
+
 // < ========== TASK ZN start ========== >
 
 function rotateArray(arr: number[], num: number): number[] {
