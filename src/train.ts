@@ -1,5 +1,38 @@
 // < ========== TASK ZO start ========== >
 
+function countNumberAndLetters(input: string): string {
+  let number = 0;
+  let letter = 0;
+
+  for (const ch of input) {
+    if (ch >= "0" && ch <= "9") {
+      number++;
+    }
+    else if (
+      (ch >= "a" && ch <= "z") ||
+      (ch >= "A" && ch <= "Z")
+    ) {
+      letter++;
+    }
+  }
+
+  return `{ number: ${number}, letter: ${letter} }`;
+}
+
+
+
+console.log(
+  countNumberAndLetters("string152%\¥")
+); 
+
+
+// < ========== TASK Z0 end ========== >
+
+
+
+
+// < ========== TASK ZO start ========== >
+
 
 function areParenthesesBalanced(str: string): boolean {
   let count = 0;
@@ -14,9 +47,9 @@ function areParenthesesBalanced(str: string): boolean {
   return count === 0;
 }
 
-console.log(
-  areParenthesesBalanced("string()ichida(qavslar)soni()balansda")
-); 
+// console.log(
+//   areParenthesesBalanced("string()ichida(qavslar)soni()balansda")
+// ); 
 
 
 // < ========== TASK Z0 end ========== >
@@ -31,7 +64,7 @@ function rotateArray(arr: number[], num: number): number[] {
   return [...sliced, ...remaining];
 }
 
-console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+// console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
 
 // < ========== TASK ZN end ========== >
 
