@@ -1,4 +1,32 @@
-// < ========== TASK ZO start ========== >
+// < ========== TASK ZQ start ========== >
+
+function findDuplicates(arr: number[]): number[] {
+  const count = new Map<number, number>()
+  const result: number[] = []
+
+  for (const num of arr) {
+    count.set(num, (count.get(num) || 0) + 1)
+  }
+
+  for (const [num, c] of count) {
+    if (c >= 2) result.push(num)
+  }
+
+  return result
+}
+
+
+console.log(
+  findDuplicates([1,2,3,4,5,4,3,4])
+); 
+
+
+// < ========== TASK ZQ end ========== >
+
+
+
+
+// < ========== TASK ZP start ========== >
 
 function countNumberAndLetters(input: string): string {
   let number = 0;
@@ -21,12 +49,12 @@ function countNumberAndLetters(input: string): string {
 
 
 
-console.log(
-  countNumberAndLetters("string152%\¥")
-); 
+// console.log(
+//   countNumberAndLetters("string152%\¥")
+// ); 
 
 
-// < ========== TASK Z0 end ========== >
+// < ========== TASK ZP end ========== >
 
 
 
