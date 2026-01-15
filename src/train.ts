@@ -1,3 +1,27 @@
+// < ========== TASK ZR start ========== >
+
+function areArraysEqual(a: number[], b: number[]): boolean {
+  if (a.length !== b.length) return false
+
+  const sortedA = [...a].sort()
+  const sortedB = [...b].sort()
+
+  for (let i = 0; i < sortedA.length; i++) {
+    if (sortedA[i] !== sortedB[i]) {
+      return false
+    }
+  }
+
+  return true
+}
+
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
+
+
+// < ========== TASK ZR end ========== >
+
+
+
 // < ========== TASK ZQ start ========== >
 
 function findDuplicates(arr: number[]): number[] {
@@ -16,9 +40,9 @@ function findDuplicates(arr: number[]): number[] {
 }
 
 
-console.log(
-  findDuplicates([1,2,3,4,5,4,3,4])
-); 
+// console.log(
+//   findDuplicates([1,2,3,4,5,4,3,4])
+// ); 
 
 
 // < ========== TASK ZQ end ========== >
