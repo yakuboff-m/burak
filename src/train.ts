@@ -1,5 +1,35 @@
 // < ========== TASK ZS start ========== >
 
+type T = {
+[key: string]: number
+}
+
+function firstUniqueCharIndex(str: string): number {
+  const counts: T = {};
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    counts[char] = (counts[char] || 0) + 1;
+  }
+
+  for (let i = 0; i < str.length; i++) {
+    if (counts[str[i]] === 1) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+console.log(firstUniqueCharIndex("stamp"));
+
+
+// < ========== TASK ZS end ========== >
+
+
+
+// < ========== TASK ZS start ========== >
+
 function singleNumber(nums: number[]): number {
   for (let i = 0; i < nums.length; i++) {
     let count = 0;
@@ -19,7 +49,7 @@ function singleNumber(nums: number[]): number {
 }
 
 
-console.log(singleNumber([4, 2, 1, 2, 1]));
+// console.log(singleNumber([4, 2, 1, 2, 1]));
 
 
 // < ========== TASK ZS end ========== >
