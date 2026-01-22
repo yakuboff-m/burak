@@ -1,5 +1,48 @@
 // < ========== TASK ZS start ========== >
 
+function sumOfUnique(arr: number[]): number {
+  let sum = 0;
+  for(let i = 0; i < arr.length; i++) {
+    let count = 0;
+
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        count++;
+      }
+    }
+
+    if (count === 1) {
+      sum += arr[i];
+    }
+  }
+
+  return sum;
+}
+
+console.log(sumOfUnique([1,2,3,2]));
+
+function sumOfUnique1(arr: number[]): number {
+  const freq = new Map<number, number>();
+  let sum = 0;
+
+  for (const num of arr) {
+    freq.set(num, (freq.get(num) || 0) + 1);
+  }
+
+  for (const [num, count] of freq) {
+    if (count === 1) {
+      sum += num;
+    }
+  }
+
+  return sum;
+}
+
+console.log(sumOfUnique1([1,2,3,2]));
+
+
+// < ========== TASK ZS start ========== >
+
 type T = {
 [key: string]: number
 }
@@ -21,7 +64,7 @@ function firstUniqueCharIndex(str: string): number {
   return -1;
 }
 
-console.log(firstUniqueCharIndex("stamp"));
+// console.log(firstUniqueCharIndex("stamp"));
 
 
 // < ========== TASK ZS end ========== >
