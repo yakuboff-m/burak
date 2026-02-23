@@ -1,5 +1,19 @@
 // < ========== TASK ZS start ========== >
 
+function getReverse1(a: string) {
+  if (typeof a !== "string") {
+    console.log("Please, insert a string");
+  } else {
+    const sorted = a
+      .split(" ")
+      .map((word) => word.split("").reverse().join(""));
+    const result = sorted.join(" ");
+    console.log(result);
+  }
+}
+
+// getReverse1("string number array");
+
 function sumOfUnique(arr: number[]): number {
   let sum = 0;
   for(let i = 0; i < arr.length; i++) {
