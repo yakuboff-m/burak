@@ -1,3 +1,20 @@
+function sumOdds1(num: number): number {
+  let sum = 0;
+  for (let i = 0; i < num; i++) {
+    let z = i % 2;
+    if (z === 1) {
+      sum++;
+    }
+  }
+  return sum;
+}
+
+// console.log1(sumOdds(9));
+
+
+
+
+
 // < ========== TASK ZS start ========== >
 
 function getReverse1(a: string) {
